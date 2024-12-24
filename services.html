@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBank - Banque Digitale</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.7);
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #EEF2FF 0%, #F5F3FF 100%);
+        }
+        
+        .feature-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(5px);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card {
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen">
+    <!-- Navigation reste identique -->
+    <nav class="glass-effect fixed w-full z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-blue-600">ChatBank</div>
+                <div class="nav-links space-x-8">
+                    <a href="index.html" class="text-gray-600 hover:text-blue-600">Accueil</a>
+                    <a href="#services" class="text-gray-600 hover:text-blue-600">Services</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">À propos</a>
+                    <a href="#" class="text-gray-600 hover:text-blue-600">Contact</a>
+                </div>
+                <button class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700">
+                    Connexion
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section reste identique -->
+    <div class="pt-24 pb-16">
+        <!-- ... Contenu précédent ... -->
+    </div>
+
+    <!-- Nouvelle Section Services -->
+    <div id="services" class="py-20 bg-gradient-to-b from-blue-50 to-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-4">Nos Services</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Découvrez nos services bancaires conçus pour répondre à tous vos besoins financiers avec simplicité et efficacité.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1: Création de compte -->
+                <div class="service-card rounded-xl p-6 text-center">
+                    <div class="bg-blue-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Création de Compte</h3>
+                    <p class="text-gray-600">Ouvrez votre compte en quelques minutes, 100% en ligne et sans paperasse.</p>
+                    <button class="mt-4 px-4 py-2 bg-blue-600 text-white rounded-full hover:bg-blue-700">
+                        Commencer
+                    </button>
+                </div>
+
+                <!-- Service 2: Dépôt -->
+                <div class="service-card rounded-xl p-6 text-center">
+                    <div class="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Dépôt</h3>
+                    <p class="text-gray-600">Déposez de l'argent facilement via nos nombreux points de service ou en ligne.</p>
+                    <button class="mt-4 px-4 py-2 bg-green-600 text-white rounded-full hover:bg-green-700">
+                        Déposer
+                    </button>
+                </div>
+
+                <!-- Service 3: Retrait -->
+                <div class="service-card rounded-xl p-6 text-center">
+                    <div class="bg-purple-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Retrait</h3>
+                    <p class="text-gray-600">Retirez votre argent 24/7 dans tous nos guichets automatiques partenaires.</p>
+                    <button class="mt-4 px-4 py-2 bg-purple-600 text-white rounded-full hover:bg-purple-700">
+                        Retirer
+                    </button>
+                </div>
+
+                <!-- Service 4: Transfert -->
+                <div class="service-card rounded-xl p-6 text-center">
+                    <div class="bg-orange-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-800 mb-2">Transfert</h3>
+                    <p class="text-gray-600">Envoyez de l'argent instantanément à vos proches, partout dans le monde.</p>
+                    <button class="mt-4 px-4 py-2 bg-orange-600 text-white rounded-full hover:bg-orange-700">
+                        Transférer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Les autres sections restent identiques -->
+    <!-- Features -->
+    <div class="py-16 glass-effect">
+        <!-- ... Contenu précédent ... -->
+    </div>
+
+    <!-- Contact Section -->
+    <div class="py-16">
+        <!-- ... Contenu précédent ... -->
+    </div>
+</body>
+</html>
